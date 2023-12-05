@@ -41,7 +41,8 @@ def distance(x1, x2):
 
 def compute_g_of_r_at_t(positions):	
 	distance_tensor = distance(positions[np.newaxis,np.newaxis,np.newaxis,unique_pair_indcs[0], :],
-				 L*lattice_tensor[:,:,:,np.newaxis,np.newaxis,:] + positions[np.newaxis,np.newaxis,np.newaxis,unique_pair_indcs[1], :])
+				 L*lattice_tensor[:,:,:,np.newaxis,np.newaxis,:] + 
+				 positions[np.newaxis,np.newaxis,np.newaxis,unique_pair_indcs[1], :])
 	
 	gofr = np.histogram(distance_tensor.flatten(), bins = bins)[0]*histogram_to_gofr
 	return gofr

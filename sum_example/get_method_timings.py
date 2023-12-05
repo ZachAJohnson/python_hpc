@@ -17,8 +17,8 @@ def main():
     numba_program = "python numba/numba_python_sum.py"
     python_program= "python pure_python/pure_python_sum.py"
     numpy_program = "python numpy/numpy_python_sum.py"
-    cython_smart_program= "cd cython; python setup.py build_ext --inplace; python cython_smart_sum.py"
-    cython_dumb_program= "cd cython; python setup.py build_ext --inplace; python cython_dumb_sum.py"
+    cython_smart_program= "cd cython_smart; python setup.py build_ext --inplace; python cython_smart_sum.py"
+    cython_dumb_program= "cd cython_dumb; python setup.py build_ext --inplace; python cython_dumb_sum.py"
 
     data = {"N": [], "C++": [], "Python": [], "Numba(njit)": [],
             "Numpy": [], "Cython(dumb)": [], "Cython(smart)": []}
