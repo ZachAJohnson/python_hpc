@@ -36,7 +36,7 @@ def read_xyz(filename):
 				break
 	ti_tot = ti-num_to_wait
 	print(f"Reached {ti_tot} times")
-	return cum_gofr/(num_ti_to_average)#, gofr_list
+	return cum_gofr/(ti_tot)#, gofr_list
 
 cdef double distance(double[:] x1, double[:] x2, double[:] periodic_vec):
 	cdef double dist = 0

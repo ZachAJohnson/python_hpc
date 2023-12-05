@@ -33,7 +33,7 @@ def read_xyz(filename):
 				break
 	ti_tot = ti-num_to_wait
 	print(f"Reached {ti_tot} times")
-	return cum_gofr/(num_ti_to_average)#, gofr_list
+	return cum_gofr/(ti_tot)#, gofr_list
 
 def distance(x1, x2):
 	dist = np.linalg.norm(np.abs(x1-x2), axis=-1)
