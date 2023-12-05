@@ -10,10 +10,10 @@ def run_command(command):
     return end - start
 
 def main():
-    N_array = np.geomspace(1e9, 1e9, num=1)
+    N_array = np.geomspace(1e1, 1e9, num=5)
     
     # Define run for all different methods
-    cpp_program = "cd c++; make -B; pure_cpp_sum"
+    cpp_program = "cd c++; make -B; ./pure_cpp_sum"
     numba_program = "python numba/numba_python_sum.py"
     python_program= "python pure_python/pure_python_sum.py"
     numpy_program = "python numpy/numpy_python_sum.py"
@@ -24,12 +24,12 @@ def main():
             "Numpy": [], "Cython(dumb)": [], "Cython(smart)": []}
 
     for N in N_array:
-        cpp_time = 1#run_command(f"{cpp_program} {N}; cd ..")
-        python_time = 1#run_command(f"{python_program} {N}")
-        numba_time = 1#run_command(f"{numba_program} {N}")
+        cpp_time = run_command(f"{cpp_program} {N}; cd ..")
+        python_time = run_command(f"{python_program} {N}")
+        numba_time = run_command(f"{numba_program} {N}")
         numpy_time = run_command(f"{numpy_program} {N}")
-        cython_smart_time = 1#run_command(f"{cython_smart_program} {N}; cd ..")
-        cython_dumb_time = 1#run_command(f"{cython_dumb_program} {N}; cd ..")
+        cython_smart_time = run_command(f"{cython_smart_program} {N}; cd ..")
+        cython_dumb_time = run_command(f"{cython_dumb_program} {N}; cd ..")
 
 
         data["N"].append(N)
